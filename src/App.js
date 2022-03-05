@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+// mis Componentes
+import TrackList from "./components/TrackList";
+import PlayerControls from "./components/PlayerControls";
+// mi functional high component (por que envuelve a los otros)
+import { MusicPlayerProvider } from "./MusicPlayerContext";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MusicPlayerProvider>
+      <div className="container">
+        <TrackList />
+        <PlayerControls />
+      </div>
+    </MusicPlayerProvider>
   );
-}
+};
 
 export default App;
